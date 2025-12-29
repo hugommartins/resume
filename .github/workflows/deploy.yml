@@ -36,7 +36,7 @@ jobs:
         run: npm install
 
       - name: Build Eleventy
-        run: npx @11ty/eleventy
+        run: npx @11ty/eleventy --pathprefix=/resume/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
