@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ name }} | Resume</title>
+  <link rel="stylesheet" href="/css/{{ style | default('style') }}.css">
+</head>
+<body>
+<div class="maintenance-overlay no-print">
+    <div class="maintenance-content">
+      <h2>Under Development</h2>
+      <p>I'm currently polishing the final details. Check back soon!</p>
+    </div>
+  </div>
+
+<div class="web-container">
+  <header class="top-nav">
+    <div class="nav-name"><strong>{{ name }}</strong></div>
+    <div class="nav-links">
+      {% if linkedin %}<span>{{ linkedin }}</span>{% endif %}
+      {% if email %}<span>{{ email }}</span>{% endif %}
+      {% if location %}<span>{{ location }}</span>{% endif %}
+    </div>
+  </header>
+
+  {% if summary %}
+  <section class="summary-box">
+    {{ summary | safe }}
+  </section>
+  {% endif %}
+
+  <div class="resume-grid">
+    
+    <section class="grid-row">
+      <div class="row-label">Experience</div>
+      <div class="row-content">
+        {{ content | safe }}
+      </div>
+    </section>
+
+    {% if tools %}
+    <section class="grid-row">
+      <div class="row-label">Tools</div>
+      <div class="row-content">
+        <p>{{ tools }}</p>
+      </div>
+    </section>
+    {% endif %}
+
+    {% if softskills %}
+    <section class="grid-row">
+      <div class="row-label">Soft Skills</div>
+      <div class="row-content">
+        <p>{{ softskills }}</p>
+      </div>
+    </section>
+    {% endif %}
+
+    {% if hardskills %}
+    <section class="grid-row">
+      <div class="row-label">Hard Skills</div>
+      <div class="row-content">
+        <p>{{ hardskills }}</p>
+      </div>
+    </section>
+    {% endif %}
+
+    {% if certificates %}
+    <section class="grid-row">
+      <div class="row-label">Certificates</div>
+      <div class="row-content">
+        {% for cert in certificates %}
+        <div class="cert-entry">
+          <h3><strong>{{ cert.org }}</strong> {{ cert.title }}</h3>
+          <div class="meta">{{ cert.year }}</div>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+    {% endif %}
+
+  </div> </div> </body>
+</html>

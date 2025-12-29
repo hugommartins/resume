@@ -1,0 +1,126 @@
+/* 1. FONT IMPORT (Inter for precision, Playfair for a touch of class) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap');
+
+:root {
+  --bg: #f9f9f7;             /* Soft Paper White */
+  --accent: #2d3436;         /* Slate Charcoal */
+  --link-accent: #0984e3;    /* Professional Blue */
+  --text-main: #1e272e;
+  --text-muted: #636e72;
+  --sans: 'Inter', sans-serif;
+  --serif: 'Playfair Display', serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background-color: var(--bg);
+  color: var(--text-main);
+  font-family: var(--sans);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+.web-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 60px;
+  background: #ffffff;      /* Pure white card look */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+  border-radius: 4px;
+}
+
+/* --- Top Nav (Tony Grid compatible) --- */
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 100px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 30px;
+}
+
+.nav-name {
+  font-family: var(--serif);
+  font-size: 2.2rem;
+  font-style: italic;
+  color: var(--accent);
+}
+
+.nav-links {
+  display: flex;
+  gap: 15px;
+  font-size: 0.85rem;
+  color: var(--link-accent);
+  font-weight: 500;
+}
+
+/* --- The Grid Rows --- */
+.resume-grid {
+  display: flex;
+  flex-direction: column;
+}
+
+.grid-row {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 50px;
+  padding: 35px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.row-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 600;
+  color: var(--text-muted);
+  padding-top: 5px; /* Aligns with h3 baseline */
+}
+
+/* --- Content Styling --- */
+.row-content h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--accent);
+}
+
+.row-content h3 strong {
+  color: var(--text-main);
+}
+
+.row-content p {
+  color: var(--text-main);
+  font-weight: 400;
+  font-size: 0.95rem;
+}
+
+/* Meta info (Dates) */
+.meta {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-top: 8px;
+  display: block;
+}
+
+/* Indented Bullets */
+.row-content ul {
+  margin: 15px 0;
+  padding-left: 15px;
+  list-style-type: none;
+}
+
+.row-content li {
+  position: relative;
+  margin-bottom: 8px;
+  padding-left: 15px;
+}
+
+.row-content li::before {
+  content: "—"; /* Elegant dash instead of dot */
+  position: absolute;
+  left: 0;
+  color: var(--link-accent);
+}

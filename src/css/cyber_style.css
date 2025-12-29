@@ -1,0 +1,130 @@
+/* 1. FONT IMPORT (Monospace for a tech feel) */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&family=Inter:wght@400;900&display=swap');
+
+:root {
+  --bg: #0a0a0a;             /* Deep Black */
+  --accent: #cfff04;         /* Acid Yellow/Green */
+  --text-main: #ffffff;      /* Pure White */
+  --text-muted: #a1a1aa;     /* Zinc Gray */
+  --sans: 'Inter', sans-serif;
+  --mono: 'JetBrains Mono', monospace;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background-color: var(--bg);
+  color: var(--text-main);
+  font-family: var(--sans);
+  line-height: 1.5;
+  padding: 0;
+}
+
+.web-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 100px 50px;
+  border-left: 1px solid #27272a;
+  border-right: 1px solid #27272a;
+  min-height: 100vh;
+}
+
+/* --- Top Nav (Tony Grid compatible) --- */
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 4px solid var(--accent);
+  padding-bottom: 20px;
+  margin-bottom: 80px;
+}
+
+.nav-name {
+  font-size: 2.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.05em;
+  color: var(--accent);
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+}
+
+/* --- The Grid Rows --- */
+.resume-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0; /* Removing gap to use borders instead */
+}
+
+.grid-row {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 40px;
+  border-bottom: 1px solid #27272a;
+  padding: 40px 0;
+  align-items: start;
+}
+
+.row-label {
+  font-family: var(--mono);
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  position: sticky;
+  top: 40px;
+}
+
+/* --- Content Styling --- */
+.row-content h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.row-content h3 strong {
+  color: var(--accent);
+}
+
+.row-content p {
+  color: var(--text-muted);
+  max-width: 650px;
+  font-size: 1rem;
+}
+
+/* Meta info (Dates) */
+.meta {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  background: #18181b;
+  display: inline-block;
+  padding: 4px 8px;
+  margin-top: 10px;
+  color: var(--accent);
+}
+
+/* Bullet Points */
+.row-content ul {
+  list-style: none;
+  margin-top: 20px;
+}
+
+.row-content li {
+  margin-bottom: 10px;
+  padding-left: 20px;
+  position: relative;
+  color: var(--text-main);
+}
+
+.row-content li::before {
+  content: ">";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-family: var(--mono);
+}
